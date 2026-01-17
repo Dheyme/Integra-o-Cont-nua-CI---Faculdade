@@ -24,22 +24,25 @@ pipeline {
 
     stage('Build') {
       steps {
-        dir 'sample-jenkins-ci'
-        sh 'make build'
+        dir('sample-jenkins-ci') {
+          sh 'make build'
+        }
       }
     }
 
     stage('Unit Tests') {
       steps {
-        dir 'sample-jenkins-ci'
-        sh 'make test'
+        dir('sample-jenkins-ci') {
+          sh 'make test'
+        }
       }
     }
 
     stage('Build Docker Image') {
       steps {
-        dir 'sample-jenkins-ci'
-        sh 'make build-docker IMAGE=${IMAGE}'
+        dir('sample-jenkins-ci') {
+          sh 'make build-docker IMAGE=${IMAGE}'
+        }
       }
     }
   }
