@@ -1,0 +1,6 @@
+# Jenkins
+jenkins_home/
+**/jenkins_home/
+
+# Secrets
+**/secrets/
